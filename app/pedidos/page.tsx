@@ -1,6 +1,24 @@
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
+interface Pedido {
+    id: number;
+    status: string;
+    total: number;
+    criadoEm: string;
+    atualizadoEm: string;
+}
+
+const pedidosPlaceholder: Pedido[] = [
+    {
+        id: 1234,
+        status: "Recebido",
+        total: 64.99,
+        criadoEm: "15/04/2021 19:42",
+        atualizadoEm: "15/04/2021 18:23"
+    },
+];
+
 export default function PedidosPage() {
     return (
         <div className="flex min-h-svh w-full justify-center p-6 md:p-10">
@@ -24,13 +42,15 @@ export default function PedidosPage() {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                <TableRow>
-                                    <TableCell>1234</TableCell>
-                                    <TableCell>Recebido</TableCell>
-                                    <TableCell>64,99</TableCell>
-                                    <TableCell>15/04/2021 19:42</TableCell>
-                                    <TableCell>15/04/2021 18:23</TableCell>
-                                </TableRow>
+                                {pedidosPlaceholder.map((pedido) => (
+                                    <TableRow key={pedido.id}>
+                                        <TableCell>{pedido.id}</TableCell>
+                                        <TableCell>{pedido.status}</TableCell>
+                                        <TableCell>{pedido.total}</TableCell>
+                                        <TableCell>{pedido.criadoEm}</TableCell>
+                                        <TableCell>{pedido.atualizadoEm}</TableCell>
+                                    </TableRow>
+                                ))}
                             </TableBody>
                         </Table>
                     </div>
