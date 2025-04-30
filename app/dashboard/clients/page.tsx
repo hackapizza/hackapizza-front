@@ -5,22 +5,11 @@ import { CreateClienteForm } from "./components/create-cliente-form";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { api } from "@/lib/axios";
+import { Client } from "./client";
 
-interface Cliente {
-    id: number;
-    nome: string;
-    cpf: string;
-    telefone: string;
-    bairro: string;
-    rua: string;
-    numero: string;
-    cidade: string;
-    criadoEm?: string;
-    atualizadoEm?: string;
-}
 
 export default function Clientes() {
-    const [clientes, setClientes] = useState<Cliente[]>([]);
+    const [clientes, setClientes] = useState<Client[]>([]);
 
     async function getClientes() {
         try {
