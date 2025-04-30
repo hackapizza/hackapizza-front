@@ -54,7 +54,7 @@ export default function Products() {
                                 <TableCell>R$ {product.preco}</TableCell>
                                 <TableCell>{product.categoria}</TableCell>
                                 <TableCell>{product.tamanho}</TableCell>
-                                <TableCell>{product.sabor}</TableCell>
+                                <TableCell>{product.sabor ?? "Padrão"}</TableCell>
                                 <TableCell>{product.disponivel ? "Sim" : "Não"}</TableCell>
                             </TableRow>
                         ))}
