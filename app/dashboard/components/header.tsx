@@ -42,18 +42,17 @@ export function DashboardHeader() {
 
     return (
         <div className="w-full border-b border-border">
-            <header className="w-full max-w-7xl mx-auto py-3 px-6 flex items-center justify-end">
+            <header className="w-full max-w-7xl mx-auto py-3 px-6 flex items-center justify-between">
+                <h1 className="text-xl font-bold text-sky-600">Hackapizza</h1>
                 <NavigationMenu>
                     <NavigationMenuList>
                         {links}
                     </NavigationMenuList>
                 </NavigationMenu>
-                <div className="border-l border-border">
-                    <Button variant="secondary" className="ml-4" onClick={logout}>
-                        <LogOutIcon />
-                        Sair
-                    </Button>
-                </div>
+                <Button variant="secondary" className="ml-4" onClick={logout}>
+                    <LogOutIcon />
+                    Sair
+                </Button>
             </header>
         </div>
     );
