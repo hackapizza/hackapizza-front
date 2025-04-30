@@ -1,8 +1,10 @@
 import axios from "axios";
-import { error } from "console";
 
 const api = axios.create({
-    baseURL: process.env.API_BASE_URL,
+    baseURL: "http://localhost:3000/",
+    headers: {
+        "Content-Type": "application/json",
+    }
 });
 
 
