@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Order } from "./order";
 import Link from "next/link";
+import { CreatePedidoForm } from "./components/create-pedido-form";
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState<Order[]>([]);
@@ -32,6 +33,7 @@ export default function OrdersPage() {
             <div className="w-full mb-6 flex items-center justify-between">
                 <h2 className="text-lg font-medium">Pedidos</h2>
                 <div className="flex gap-3">
+                    <CreatePedidoForm setOrders={setOrders}/>
                 </div>
             </div>
 
@@ -49,7 +51,7 @@ export default function OrdersPage() {
                     <TableBody>
                         {
                             orders.map((order) => (
-                                <TableRow key={order.id + order.clienteId}>
+                                <TableRow key={order.id + order.dataPedido.toString()}>
                                     <TableCell className="font-medium">
                                         <Link href={`/dashboard/orders/${order.id}`} className="text-blue-500 hover:text-blue-700">
                                             {order.id}
