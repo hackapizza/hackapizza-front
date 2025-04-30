@@ -17,7 +17,7 @@ const dashboardHeaderLinks = [
     },
     {
         label: "Clientes",
-        link: "/dashboard/clients"
+        link: "/dashboard/clientes"
     },
     {
         label: "Usuários",

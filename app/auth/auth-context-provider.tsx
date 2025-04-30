@@ -13,10 +13,12 @@ export default function AuthContextProvider(props: { children: ReactNode }) {
         }
         return false;
     });
+    
 
     async function login(data: LoginFormData) {
         try {
             const response = await api.post("auth/login", data);
+            console.log('Login response:', response.data);
             localStorage.setItem("token", response.data.access_token);
             setIsAuth(true);
             toast.success("Login realizado com sucesso!");
