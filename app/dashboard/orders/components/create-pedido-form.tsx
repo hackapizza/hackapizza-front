@@ -63,7 +63,6 @@ export function CreatePedidoForm(props: CreateOrderFormProps) {
     const newData = {
       ...data,
       clienteId: Number(data.clienteId),
-      usuarioId: 1,
       status: "recebido",
       total: data.itens.reduce((acc, item) => acc + item.subtotal, 0),
     }
@@ -165,7 +164,7 @@ export function CreatePedidoForm(props: CreateOrderFormProps) {
               Adicionar produto
             </Button>
 
-            <div className="my-3 space-y-4 overflow-y-auto max-h-[250px]">
+            <div className="my-3 py-1 space-y-4 overflow-y-auto max-h-[250px]">
               {
                 fields.map((item, index) => (
                   <FormField
